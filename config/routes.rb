@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  constraints subdomain: 'admin' do
+    scope module: 'admin', as: 'admin' do
+      # Routes for the admin functionality
+      root 'dashboard#index'
+    end
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # Routes for the tutor functionality
+  root 'tutor_dashboard#index'
 end
