@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+
   devise_for :tutors
+
   constraints subdomain: 'admin' do
     scope module: 'admin', as: 'admin' do
       # Routes for the admin functionality
