@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   devise_scope :tutor do
     # Routes for the tutor functionality
     root to: 'tutor/sessions#new'
+    get 'tutors/sign_in', to: redirect('/')
   end
 
   get "apply", to: "pages#apply"

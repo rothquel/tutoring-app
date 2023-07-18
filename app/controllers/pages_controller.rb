@@ -4,5 +4,6 @@ class PagesController < ApplicationController
   end
 
   def apply
+    render layout: 'apply'
   end
 end
